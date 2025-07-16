@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 
-import '../../../data/assets_Path.dart';
+import '../../../data/assets_path.dart';
 
 class SplashController extends GetxController {
   final List<String> images = [

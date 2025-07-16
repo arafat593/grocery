@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/app/data/app_color.dart';
-import 'package:grocery_app/app/data/assets_Path.dart';
+import 'package:grocery_app/app/data/assets_path.dart';
+import 'package:grocery_app/app/modules/welcome/views/welcome_view.dart';
 import 'package:grocery_app/app/modules/widget/custom_button.dart';
 import '../../../data/app_text_style.dart';
 import '../controllers/splash_controller.dart';
@@ -76,7 +77,9 @@ class SplashView extends GetView<SplashController> {
                           ),
                         ),
                       ),
-                      CustomButton(onPressed: () {}, buttonText: 'Get started'),
+                      CustomButton(onPressed: () {
+                        Get.to(()=>WelcomeView());
+                      }, buttonText: 'Get started'),
                     ],
                   ),
                 ],

@@ -2,12 +2,16 @@ import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/login/bindings/login_binding.dart';
+import '../modules/login/views/login_view.dart';
 import '../modules/onboding/bindings/onboding_binding.dart';
 import '../modules/onboding/views/onboding_view.dart';
 import '../modules/payment/bindings/payment_binding.dart';
 import '../modules/payment/views/payment_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
+import '../modules/welcome/bindings/welcome_binding.dart';
+import '../modules/welcome/views/welcome_view.dart';
 
 part 'app_routes.dart';
 
@@ -24,7 +28,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SPLASH,
-      page: () =>  SplashView(),
+      page: () => SplashView(),
       binding: SplashBinding(),
     ),
     GetPage(
@@ -36,6 +40,16 @@ class AppPages {
       name: _Paths.PAYMENT,
       page: () => const PaymentView(),
       binding: PaymentBinding(),
+    ),
+    GetPage(
+      name: _Paths.WELCOME,
+      page: () => const WelcomeView(),
+      binding: WelcomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => const LoginView(),
+      binding: LoginBinding(),
     ),
   ];
 }
