@@ -7,4 +7,5 @@ class AssetsPath{
   static String bigCart = '$_basePath/bigCart.png';
   static String welcomeImage = '$_basePath/welcome_image.png';
   static String loginScreen = '$_basePath/Login_screen_image.png';
+  static String portraitFemalePerson = '$_basePath/portrait_female_person.png';
 }

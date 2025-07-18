@@ -9,7 +9,7 @@ import '../../../data/app_text_style.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {
-  SplashView({super.key});
+  const SplashView({super.key});
 
   @override
   Widget build(BuildContext context) {

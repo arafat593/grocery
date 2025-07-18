@@ -4,6 +4,7 @@ import 'package:grocery_app/app/data/assets_path.dart';
 import 'package:grocery_app/app/modules/login/views/login_view.dart';
 import 'package:grocery_app/app/modules/widget/custom_auth.dart';
 import 'package:grocery_app/app/modules/widget/custom_button.dart';
+import 'package:grocery_app/app/routes/app_pages.dart';
 import '../controllers/welcome_controller.dart';
 class WelcomeView extends GetView<WelcomeController> {
   const WelcomeView({super.key});
@@ -20,7 +21,7 @@ class WelcomeView extends GetView<WelcomeController> {
             bottomText: 'Already have an account?',
             bottomButtonText: 'Login',
             onBottomButton: () {
-              Get.to(LoginView());
+              Get.toNamed(Routes.SIGN_UP);
             },
             children: [
               const SizedBox(height: 12),
@@ -33,7 +34,9 @@ class WelcomeView extends GetView<WelcomeController> {
                 isTrue: false,
               ),
               CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(Routes.SIGN_UP);
+                },
                 buttonText: 'Create an account',
                 prefix: Icons.account_circle_outlined,
               ),

@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/app/data/app_color.dart';
 import 'package:grocery_app/app/data/app_text_style.dart';
-
 import '../../../data/assets_path.dart';
 import '../../widget/custom_auth.dart';
 import '../../widget/custom_button.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({super.key});
+  LoginView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,28 +25,84 @@ class LoginView extends GetView<LoginController> {
             bottomButtonText: 'Sign up',
             onBottomButton: () {},
             children: [
+              SizedBox(height: 20),
               TextFormField(
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email_outlined,color: AppColor.textColor,),
-                  fillColor: AppColor.whiteColor,
-                  filled: true,
+                  prefixIcon: Icon(
+                    Icons.email_outlined,
+                    color: AppColor.textColor,
+                  ),
                   hintText: 'Email Address',
-                  hintStyle: AppTextStyle.medium15.copyWith(color: AppColor.textColor,),
-                  disabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide.none
+                  hintStyle: AppTextStyle.medium15.copyWith(
+                    color: AppColor.textColor,
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide.none
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide.none
-                  )
                 ),
               ),
-              const SizedBox(height: 12),
-              CustomButton(
-                onPressed: () {},
-                buttonText: 'Login',),
+              SizedBox(height: 20),
+              TextFormField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.email_outlined,
+                    color: AppColor.textColor,
+                  ),
+                  hintText: 'Email Address',
+                  hintStyle: AppTextStyle.medium15.copyWith(
+                    color: AppColor.textColor,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Obx(
+                () => Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () => controller.toggle(),
+                      child: Container(
+                        width: 40,
+                        height: 20,
+                        decoration: BoxDecoration(
+                          color: AppColor.backGroundF9,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: AppColor.textColor),
+                        ),
+                        child: AnimatedAlign(
+                          alignment: controller.isSwitched.value
+                              ? Alignment.centerLeft
+                              : Alignment.centerRight,
+                          duration: Duration(microseconds: 200),
+                          child: Container(
+                            width: 20,
+                            height: 20,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              border: Border.all(color: AppColor.textColor),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Text('Remember me', style: AppTextStyle.medium15),
+                    Spacer(),
+                    TextButton(
+                      style: ButtonStyle(
+                        overlayColor: WidgetStateProperty.all(
+                          Colors.transparent,
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Forgot Password',
+                        style: AppTextStyle.medium15,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 12),
+              CustomButton(onPressed: () {}, buttonText: 'Login'),
             ],
           ),
         ],

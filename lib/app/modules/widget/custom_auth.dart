@@ -39,7 +39,7 @@ class CustomAuth extends StatelessWidget {
             color: AppColor.backGroundF9,
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(title, style: AppTextStyle.medium25),
               const SizedBox(height: 8),
