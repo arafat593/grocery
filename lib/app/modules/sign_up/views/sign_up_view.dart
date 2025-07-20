@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/app/modules/widget/custom_auth.dart';
 import 'package:grocery_app/app/modules/widget/custom_button.dart';
+import 'package:grocery_app/app/routes/app_pages.dart';
 import '../../../data/assets_path.dart';
 import '../controllers/sign_up_controller.dart';
 
@@ -17,7 +18,9 @@ class SignUpView extends GetView<SignUpController> {
           CustomAuth(
             title: 'Create Account',
             description: 'Quickly create account',
-            onBottomButton: (){},
+            onBottomButton: (){
+              Get.toNamed(Routes.LOGIN);
+            },
             appBarTitle: 'Welcome',
             bottomText: 'Already have an account ?',
             bottomButtonText: 'Login',

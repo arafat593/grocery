@@ -21,7 +21,7 @@ class WelcomeView extends GetView<WelcomeController> {
             bottomText: 'Already have an account?',
             bottomButtonText: 'Login',
             onBottomButton: () {
-              Get.toNamed(Routes.SIGN_UP);
+              Get.toNamed(Routes.LOGIN);
             },
             children: [
               const SizedBox(height: 12),
