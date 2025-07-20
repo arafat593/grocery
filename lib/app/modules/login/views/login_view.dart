@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/app/data/app_color.dart';
 import 'package:grocery_app/app/data/app_text_style.dart';
+import 'package:grocery_app/app/routes/app_pages.dart';
 import '../../../data/assets_path.dart';
 import '../../widget/custom_auth.dart';
 import '../../widget/custom_button.dart';
@@ -23,7 +24,9 @@ class LoginView extends GetView<LoginController> {
             description: 'Sign in to your account',
             bottomText: 'Don’t have an account ?',
             bottomButtonText: 'Sign up',
-            onBottomButton: () {},
+            onBottomButton: () {
+              Get.toNamed(Routes.SIGN_UP);
+            },
             children: [
               SizedBox(height: 20),
               TextFormField(
@@ -62,14 +65,14 @@ class LoginView extends GetView<LoginController> {
                         width: 40,
                         height: 20,
                         decoration: BoxDecoration(
-                          color: AppColor.backGroundF9,
+                          color: controller.isSwitched.value ? AppColor.primaryColor : AppColor.backGroundF9 ,
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(color: AppColor.textColor),
                         ),
                         child: AnimatedAlign(
                           alignment: controller.isSwitched.value
-                              ? Alignment.centerLeft
-                              : Alignment.centerRight,
+                              ? Alignment.centerRight
+                              : Alignment.centerLeft,
                           duration: Duration(microseconds: 200),
                           child: Container(
                             width: 20,
@@ -102,7 +105,12 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               SizedBox(height: 12),
-              CustomButton(onPressed: () {}, buttonText: 'Login'),
+              CustomButton(
+                onPressed: () {
+                  Get.offNamed(Routes.HOME);
+                },
+                buttonText: 'Login',
+              ),
             ],
           ),
         ],
